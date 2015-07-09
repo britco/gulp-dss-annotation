@@ -1,0 +1,26 @@
+{
+  "name": "gulp-dss-annotation",
+  "version": "0.0.1",
+  "description": "Annotate stylesheets using DSS.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/britco/gulp-dss-annotation.git"
+  },
+  "keywords": [
+    "gulp",
+    "dss"
+  ],
+  "author": "Brandon R. Stoner <brandon@brit.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/britco/gulp-dss-annotation/issues"
+  },
+  "homepage": "https://github.com/britco/gulp-dss-annotation#readme"
+}
