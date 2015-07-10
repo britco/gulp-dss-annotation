@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/britco/gulp-dss-annotation/issues"
   },
-  "homepage": "https://github.com/britco/gulp-dss-annotation#readme"
+  "homepage": "https://github.com/britco/gulp-dss-annotation#readme",
+  "dependencies": {
+    "dss": "^1.0.4",
+    "gulp-util": "^3.0.6",
+    "lodash": "^3.10.0",
+    "through2": "^2.0.0"
+  }
 }
