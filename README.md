@@ -11,8 +11,6 @@ var gulp = require('gulp'),
     dssAnnotation = require('gulp-dss-annotation'),
     sass = require('gulp-sass');
 
-var through2 = require('../node_modules/through2');
-
 
 gulp.task('default', function () {
   gulp.src('src/*.scss')
