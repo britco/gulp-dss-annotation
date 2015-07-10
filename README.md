@@ -22,6 +22,6 @@ gulp.task('default', function () {
 });
 ```
 
-All `file` arguments passed into plugins affter `dssAnnotation` would have a
+All `file` arguments passed into plugins after `dssAnnotation` would have a
 list attached to them called `annotation`. This will be a list of annotation
 data from DSS.
