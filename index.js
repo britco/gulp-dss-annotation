@@ -1,14 +1,8 @@
 var dss = require('dss'),
     lodash = require('lodash'),
     gulpUtil = require('gulp-util'),
-    through = require('through2'),
+    through = require('through2');
 
-    PLUGIN_MODULE = 'gulp-dss-annotation';
-
-
-function createError(message) {
-  return new gulpUtil.PluginError(PLUGIN_MODULE, message);
-}
 
 module.exports = function (options) {
   'use strict';
