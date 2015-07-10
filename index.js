@@ -19,6 +19,11 @@ module.exports = function (options) {
         file.annotations,
       ].concat(result.blocks));
 
+      // Provide injections into gulp-data
+      file.data = file.data || {};
+      file.data.annotations = file.data.annotations || {};
+      lodash.merge(file.data.annotations, file.annotations);
+
       this.push(file);
       callback();
     };
