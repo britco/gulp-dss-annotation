@@ -7,22 +7,40 @@ var dss = require('dss'),
 module.exports = function (options) {
   'use strict';
 
+  var key, value;
+
+  if (typeof options === 'undefined') {
+    options = {};
+  }
+
+  if (typeof options.detector !== 'undefined') {
+    dss.detector(options.detector);
+  }
+
+  if (typeof options.parsers === 'undefined') {
+    options.parsers = {};
+  }
+
+  for (key in options.parsers) {
+    value = options.parsers[key];
+    dss.parser(key, value);
+  }
+
   return through.obj(function (file, enc, callback) {
     var onParse = function (result) {
       var mergedAnnotations;
 
-      file.annotations = file.annotations || {};
-
-      // NOTE: This may be dangerous for some advanced use-cases, so we may
-      // want to reconsider other options for formatting this at a later time.
-      mergedAnnotations = lodash.merge.apply(this, [
-        file.annotations,
-      ].concat(result.blocks));
+      file.annotations = file.annotations || [];
+      lodash.merge(file.annotations, result.blocks);
 
       // Provide injections into gulp-data
       file.data = file.data || {};
-      file.data.annotations = file.data.annotations || {};
+      file.data.annotations = file.data.annotations || [];
       lodash.merge(file.data.annotations, file.annotations);
+
+      if (typeof options.postProcess !== 'undefined') {
+        options.postProcess(file);
+      }
 
       this.push(file);
       callback();
