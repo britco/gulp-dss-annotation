@@ -18,7 +18,7 @@
     "dss"
   ],
   "author": "Brandon R. Stoner <brandon@brit.co>",
-  "license": "MIT",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/britco/gulp-dss-annotation/issues"
   },
